@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Notification') { 
             steps {
-                echo "successfully deployed through SCM & Web Hook"
+                echo "successfully deployed through SCM & WebHook"
             }
         }
     }
