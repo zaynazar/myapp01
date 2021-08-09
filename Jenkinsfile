@@ -1,22 +1,3 @@
-//Scripted pipeline
-
-node {  
-    stage('Checkout') { 
-
-        git 'https://github.com/zaynazar/myapp01.git'
-
-    }
-    stage('Build') { 
-
-        def mvnHome = tool name: 'Maven-3.8.1', type: 'maven'
-	sh "${mvnHome}/bin/mvn clean package"
-
-    }
-    stage('Notification') { 
-        echo "success"
-    }
-}
-
 //Declarative pipeline
 
 pipeline {
@@ -38,7 +19,7 @@ pipeline {
         }
         stage('Notification') { 
             steps {
-                echo "success"
+                echo "successfully deployed through SCM"
             }
         }
     }
